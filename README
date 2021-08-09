@@ -2,7 +2,7 @@ nix-env -iA nixos.gitMinimal
 
 git clone https://github.com/dosco/nix-setup
 
-cd nixos-vultr-securestrap
+cd nixos-setup
 
 SECURE_KEY=verysafe ./bootstrap.sh
 
