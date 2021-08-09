@@ -12,7 +12,6 @@
 		package = pkgs.neovim-nightly;
 		viAlias = true;
 		vimAlias = true;
-		# extraConfig = (builtins.readFile ./vimrc);
 		configure = {
 		    customRC = (builtins.readFile ./init.vim);
 		    plug.plugins = with pkgs.vimPlugins; [
