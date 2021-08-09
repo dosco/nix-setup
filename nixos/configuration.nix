@@ -6,6 +6,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      <nixpkgs/nixos/modules/profiles/minimal.nix>
       ./hardware-configuration.nix
       ./neovim.nix
       ./ts.nix
@@ -18,7 +19,6 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only
 
-  networking.hostName = "jupitermoon"; # Define your hostname.
 
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
@@ -28,6 +28,7 @@
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp1s0.useDHCP = true;
+  networking.hostName = "jupitermoon"; # Define your hostname.
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
