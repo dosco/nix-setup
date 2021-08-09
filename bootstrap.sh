@@ -44,8 +44,7 @@ mount /dev/vda1 /mnt/boot
 nixos-generate-config --root /mnt
 
 # Put our configs :)
-cp ./configuration.nix /mnt/etc/nixos/configuration.nix
-cp ./luks-configuration.nix /mnt/etc/nixos/luks-configuration.nix
+cp ./nixos/* /mnt/etc/nixos/
 
 # And ...
 nixos-install
