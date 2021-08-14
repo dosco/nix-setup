@@ -1,7 +1,7 @@
 {config, ...}:
 {
   boot.initrd.luks.devices = {
-    rootdev = {
+    "env-pv" = {
         device = "/dev/vda2";
         preLVM = true;
     };

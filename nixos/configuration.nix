@@ -6,11 +6,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      <nixpkgs/nixos/modules/profiles/minimal.nix>
       ./hardware-configuration.nix
+      ./luks.nix
       ./neovim.nix
       ./ts.nix
-      ./luks.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -18,10 +17,10 @@
   boot.loader.grub.version = 2;
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only
-
+  boot.loader.grub.enableCryptodisk = true;
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  # time.timeZone = "America/Los Angeles";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -137,7 +136,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.05"; # Did you read the comment?
-
-
 }
 
